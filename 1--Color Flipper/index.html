@@ -17,13 +17,14 @@
 
 
     <div class="buttons">
-
-        <input id="Hex" type="radio" name="color" value="Hex"> <label class="labels" for="Hex">Hex</label>
-        <input id="Rgb" type="radio" name="color" value="Rgb"> <label class="labels" for="Rgb">Rgb</label>
+        <input id="Hex" type="radio" name="color" value="Hex"> <label id="hexRadio" class="labels "
+            for="Hex">Hex</label>
+        <input id="Rgb" type="radio" name="color" value="Rgb"> <label id="rgbRadio" class="labels selected"
+            for="Rgb">Rgb</label>
     </div>
     <div id="main">
         <p>Background color:</p>
-        <span class="colorId">#f6f89f</span>
+        <span id="colorId">rgb(255,255,255)</span>
     </div>
 
     <a href="#" id="button">Click me!</a>
