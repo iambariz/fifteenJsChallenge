@@ -14,8 +14,13 @@ const rgbRadio = document.getElementById("rgbRadio");
 const hexRadio = document.getElementById("hexRadio");
 
 button.addEventListener('click', makeItColorful);
-hexOption.addEventListener('click', function(rgbOption, hexOption){
-    toggle(rgbOption, hexOption);
+
+hexOption.addEventListener('click', function(){
+    toggle(rgbRadio, hexRadio);
+})
+
+rgbOption.addEventListener('click', function(){
+    toggle(hexRadio, rgbRadio);
 })
 
 function getRandom(min,max){
