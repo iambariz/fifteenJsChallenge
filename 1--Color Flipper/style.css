@@ -1,0 +1,65 @@
+html{
+    font-family: 'Rubik', sans-serif;
+    font-size: 62.5%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #fff;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border: 3px solid black;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    padding: 1rem 3rem;
+    align-self: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+
+#main{
+    display: flex;
+    background-color: black;
+    color: #fff;
+    height: 20vh;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 6rem;
+}
+
+
+input[type="radio"] {
+    display: none;
+}
+
+.labels{
+    border: 2px solid crimson;
+    font-size: 2rem;
+    display: block;
+    margin: 2rem 4rem;
+    padding: 1rem 3rem;
+    cursor: pointer;
+}
+.colorId{
+    font-family: 'Roboto Mono', monospace;
+}
+
