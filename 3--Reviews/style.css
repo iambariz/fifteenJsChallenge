@@ -83,6 +83,7 @@ body{
     box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.356);
     z-index: 0;
     text-align: center;
+    transition: 0.8 all ease;
 }
 
 .content{
@@ -90,8 +91,12 @@ body{
 }
 
 #name{
+    display: block;
     letter-spacing: 0.3rem;
-    margin-bottom: 0.5rem;
+    margin: 0.5rem auto;
+    max-width: 30rem;
+    text-align: center;
+    align-items: center;
 }
 
 #position{
@@ -105,6 +110,7 @@ body{
     font-size: 3rem;
     padding: 1rem;
     color: #03aec563;
+    cursor: pointer;
 }
 
 .btn{
@@ -117,4 +123,5 @@ body{
     max-width: 12.5rem;
     border-radius: 1rem;
     padding: 1rem;
+    cursor: pointer;
 }
