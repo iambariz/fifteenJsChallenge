@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: rgb(255, 196, 0);
+  }
+
+html{
+    font-size: 62.5%;
+    font-family: 'Rubik', sans-serif;
+}
+
+body{
+    font-size: 1.6rem;
+    height: 100vh;
+    background-color: #eeeeee;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    padding: 3rem 1rem;
+    justify-content: space-around;
+}
+
+.nav-title{
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+}
+
+.colored{
+    color: var(--main-color);
+
+}
+
+#toggler{
+    display: none;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+}
+
+.nav-item a{
+    padding: 1rem;
+    color: #000;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    align-items: center;
+}
+
+.nav-link{
+    text-decoration: none;
+}
+
+.icon i{
+    color: var(--main-color);
+    font-size: 3rem;
+}
