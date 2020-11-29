@@ -92,11 +92,6 @@ ul{
     font-size: 3rem;
 }
 
-.toggler:hover{
-    color: #000;
-}
-
-
 
 @media only screen and (max-width: 896px) {
 

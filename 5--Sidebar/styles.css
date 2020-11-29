@@ -30,7 +30,7 @@ body{
     height: 100vh;
     left: -30rem;
     transition: all 0.8s ease;
-    background-color: #fff;    
+    background-color: #fff;    #
     z-index: 0;
 }
 
@@ -51,10 +51,6 @@ body{
     font-size: 3rem;
     color: var(--main-color);
     cursor: pointer;
-}
-
-.toggler:hover{
-    color: #000;
 }
 
 ul{
