@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: rgb(255, 196, 0);
+  }
+
+html{
+    font-size: 62.5%;
+    font-family: 'Rubik', sans-serif;
+}
+
+body{
+    font-size: 1.6rem;
+    height: 100vh;
+    background-color: #eeeeee;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    padding: 3rem 1rem;
+    justify-content: space-around;
+    position: relative;
+}
+
+.nav-title{
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+}
+
+.colored{
+    color: var(--main-color);
+}
+
+#toggler{
+    display: none;
+    position: absolute;
+    right: 3rem;
+    top: 3.5rem;
+    font-size: 3rem;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+}
+
+.nav-item a{
+    position: relative; 
+    margin: 1rem;
+    display: block;
+    color: #000;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    transition: all 0.8s ease;
+}
+
+#nav-list-toggle .nav-item a:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0.2rem;
+    background-color: var(--main-color);
+    transition: all 0.8s ease;
+}
+
+#nav-list-toggle .nav-item a:hover:after{
+    width: 100%;
+}
+
+.nav-link{
+    text-decoration: none;
+}
+
+.icon i{
+    color: var(--main-color);
+    font-size: 3rem;
+}
