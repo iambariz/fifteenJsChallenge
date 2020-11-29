@@ -18,7 +18,7 @@ html{
 body{
     font-size: 1.6rem;
     height: 100vh;
-    background-color: #e6e3e3;
+    background-color: #f5f5f5;
 }
 
 .navbar{
@@ -29,6 +29,9 @@ body{
     position: absolute;
     height: 100vh;
     left: -30rem;
+    transition: all 0.8s ease;
+    background-color: #fff;    #
+    z-index: 0;
 }
 
 .nav-title{
@@ -66,6 +69,7 @@ ul{
     font-weight: bold;
     letter-spacing: 0.2rem;
     transition: all 0.8s ease;
+    z-index: 1;
 }
 
 #nav-list-toggle .nav-item a:after{
