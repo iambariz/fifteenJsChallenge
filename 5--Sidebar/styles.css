@@ -30,9 +30,11 @@ body{
     height: 100vh;
     left: -30rem;
     transition: all 0.8s ease;
-    background-color: #fff;    #
+    background-color: #fff;    
     z-index: 0;
 }
+
+
 
 .nav-title{
     font-size: 3rem;
@@ -51,7 +53,14 @@ body{
     font-size: 3rem;
     color: var(--main-color);
     cursor: pointer;
+    transition: all 0.8s ease;
+
 }
+
+.toggler:hover{
+    color: #000;
+}
+
 
 ul{
     list-style: none;

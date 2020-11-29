@@ -46,6 +46,8 @@ body{
     font-size: 3rem;
     color: var(--main-color);
     cursor: pointer;
+    transition: all 0.8s ease;
+
 }
 
 ul{
@@ -90,6 +92,10 @@ ul{
 .icon i{
     color: var(--main-color);
     font-size: 3rem;
+}
+
+.toggler:hover{
+    color: #000;
 }
 
 
