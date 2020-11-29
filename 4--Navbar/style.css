@@ -68,7 +68,7 @@ ul{
     transition: all 0.8s ease;
 }
 
-.nav-item a:after{
+#nav-list-toggle .nav-item a:after{
     content: '';
     position: absolute;
     bottom: 0;
@@ -79,7 +79,7 @@ ul{
     transition: all 0.8s ease;
 }
 
-.nav-item a:hover:after{
+#nav-list-toggle .nav-item a:hover:after{
     width: 100%;
 }
 
