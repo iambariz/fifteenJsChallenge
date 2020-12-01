@@ -1,0 +1,18 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: rgb(183, 0, 255);
+    --secondary-color: rgb(119, 0, 255);
+    --third-color: rgb(98, 0, 255);
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Rubik', sans-serif;
+}
