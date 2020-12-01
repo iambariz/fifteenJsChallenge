@@ -9,6 +9,4 @@ buttons.forEach(function(btn){
         const container = (e.currentTarget.parentElement.children[3]);
         container.classList.toggle('open');
     });
-
-
 });
