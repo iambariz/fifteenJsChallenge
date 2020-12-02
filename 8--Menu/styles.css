@@ -16,3 +16,78 @@ html{
     font-size: 62.5%;
     font-family: 'Rubik', sans-serif;
 }
+
+body{
+    font-size: 1.6rem;
+    min-height: 100vh;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgb(224, 224, 224) 0%, rgb(211, 211, 211) 100%);
+}
+    a{
+    text-decoration: none;
+}
+
+.section{
+    display: flex;
+    margin: 0 auto;
+    max-width: 140rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.menu-item{
+    display: flex;
+    max-width: 60rem;
+    flex-direction: row;
+    padding: 2.5rem;
+    margin: 2.5rem;
+}
+
+
+.image{
+    border: 3px solid #AC7507;
+    border-radius: 1rem;
+    object-fit: cover;
+    height: 15rem;
+    width: 20rem;
+    margin-right: 2rem;
+}
+
+.item-header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #AC7507;
+    margin-bottom: 2rem;
+    letter-spacing: 0.3rem;
+
+}
+
+.price{
+    color: #7e5400;
+}
+
+.item-desc{
+    text-align:justify;
+}
+
+.menu{
+    margin: 0 auto;
+    text-align: center;
+    padding: 7.5rem;
+}
+
+.main-title{
+    font-size: 4rem;
+    letter-spacing: 0.7rem;
+    padding: 2.5rem;
+}
+
+.btn{
+    padding: 1rem 1.5rem;
+    margin: 1rem;
+    color: #000;
+    border: 2px solid #ce921a;
+    border-radius: 1rem;
+    font-size: 1.7rem;
+}
