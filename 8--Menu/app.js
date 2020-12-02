@@ -81,14 +81,44 @@ const items = [
       },
     ];
 
+
+//Declare variables
+
 const section = document.getElementById("section");
+const buttons = document.querySelectorAll(".filter-btn");
+//All[0],Breakfast[1],Lunch[2],Dessert[3]
+
+
+//Event listeners
+buttons[0].addEventListener('click', function(){
+  displayItems(items)
+})
+
+//this one is working 
+buttons[2].addEventListener('click', function(){
+  let filtered = items.filter(function(item){
+    return item.category === "breakfast";
+  })
+  displayItems(filtered);
+})
+
 
 window.addEventListener('DOMContentLoaded', function(){
   displayItems(items);
 });
 
+
+
+let breakfast = items.filter(function(item){
+  return item.category === "breakfast";
+})
+
+console.log(breakfast);
+
+//Display function
+
 function displayItems(array){
-  for(let i = 0; i < items.length; i++){
+  for(let i = 0; i < array.length; i++){
 
     item = array[i];
 
@@ -116,8 +146,10 @@ function displayItems(array){
     menuBody.appendChild(img);
     menuBody.appendChild(infoBody);
 
+    //append to the section
     section.appendChild(menuBody);
 
+    //assign values
     img.src = item.img;
     title.textContent = item.title;
     description.textContent = item.desc;
@@ -125,3 +157,14 @@ function displayItems(array){
   }
 }
 
+
+
+
+/*Not working
+buttons[2].addEventListener('click', function(items){
+  let filtered = items.filter(function(item){
+    return item.category === "breakfast";
+  })
+  displayItems(filtered)
+})
+*/
