@@ -90,41 +90,33 @@ const buttons = document.querySelectorAll(".filter-btn");
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//The working display engine
+window.addEventListener("DOMContentLoaded", function(){
+  let displayMenu = items.map(function(item){
+    return `
+    <div class="menu-item">
+    <img src="${item.img}" alt="#" class="image">
+    <div class="item-info">
+        <div class="item-header">
+            <h4 class="title">${item.title}</h4>
+            <h4 class="price">${item.price}</h4>
+        </div>
+        <p class="item-desc">
+        ${item.desc}
+        </p>
+    </div>
+</div>
+`;
+  });
+  displayMenu = displayMenu.join("");
+  section.innerHTML = displayMenu;
+});
 
 
 
 /*
 
 !!!!!!!Not working !!!!!!!!
-
-
-
-
 
 //Event listeners
 buttons[0].addEventListener('click', function(){
