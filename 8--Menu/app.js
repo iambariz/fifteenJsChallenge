@@ -90,9 +90,30 @@ const buttons = document.querySelectorAll(".filter-btn");
 
 
 
-//The working display engine
+//On load display
 window.addEventListener("DOMContentLoaded", function(){
-  let displayMenu = items.map(function(item){
+  displayItems(items);
+});
+
+//Filter items
+buttons.forEach(function(btn){
+  btn.addEventListener('click', function(e){
+    const category = e.currentTarget.dataset.id;
+    const menuCategory = items.filter(function(menuItem){
+      if(menuCategory === category){
+        return menuItem
+      }
+    });
+    if(category === "all"){
+      displayItems(items);
+    }
+  });
+});
+
+
+//Function declare
+function displayItems(array){
+  let displayMenu = array.map(function(item){
     return `
     <div class="menu-item">
     <img src="${item.img}" alt="#" class="image">
@@ -110,7 +131,32 @@ window.addEventListener("DOMContentLoaded", function(){
   });
   displayMenu = displayMenu.join("");
   section.innerHTML = displayMenu;
-});
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
