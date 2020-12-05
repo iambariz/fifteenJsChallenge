@@ -100,12 +100,15 @@ buttons.forEach(function(btn){
   btn.addEventListener('click', function(e){
     const category = e.currentTarget.dataset.id;
     const menuCategory = items.filter(function(menuItem){
-      if(menuCategory === category){
-        return menuItem
+      if(menuItem.category === category){
+        return menuItem;
       }
     });
     if(category === "all"){
       displayItems(items);
+    }
+    else{
+      displayItems(menuCategory)
     }
   });
 });
