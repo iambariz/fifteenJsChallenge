@@ -89,6 +89,43 @@ const buttons = document.querySelectorAll(".filter-btn");
 //All[0],Breakfast[1],Lunch[2],Dessert[3]
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+!!!!!!!Not working !!!!!!!!
+
+
+
+
+
 //Event listeners
 buttons[0].addEventListener('click', function(){
   displayItems(items)
@@ -157,10 +194,6 @@ function displayItems(array){
   }
 }
 
-
-
-
-/*Not working
 buttons[2].addEventListener('click', function(items){
   let filtered = items.filter(function(item){
     return item.category === "breakfast";
