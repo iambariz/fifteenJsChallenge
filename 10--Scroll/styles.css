@@ -7,9 +7,9 @@
 }
 
 :root {
-    --main-color: rgb(183, 0, 255);
-    --secondary-color: rgb(119, 0, 255);
-    --third-color: rgb(98, 0, 255);
+    --main-color: rgb(0, 255, 128);
+    --secondary-color: rgb(24, 202, 113);
+    --third-color: rgb(0, 124, 62);
 }
 
 html{
@@ -19,8 +19,11 @@ html{
 
 body{
     font-size: 1.6rem;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--main-color);
-    background-image: linear-gradient(132deg, var(--main-color)0%, var(--secondary-color) 100%);
+    background-image:linear-gradient(180deg,
+    rgba(24, 202, 113, 0.253)0%,
+    rgba(3, 121, 62, 0.52) 100%),
+    url(images/hero.jpg);
     overflow: hidden;
 }
