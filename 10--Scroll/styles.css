@@ -7,8 +7,8 @@
 }
 
 :root {
-    --main-color: rgb(0, 255, 128);
-    --secondary-color: rgb(24, 202, 113);
+    --main-color: rgb(0, 255, 234);
+    --secondary-color: rgb(24, 190, 202);
     --third-color: rgb(0, 124, 62);
 }
 
@@ -20,18 +20,68 @@ html{
 body{
     font-size: 1.6rem;
     min-height: 100vh;
+    color: #fff;
 }
 
 #home{
     background-color: var(--main-color);
     background-image:linear-gradient(180deg,
-    rgba(24, 202, 113, 0.253)0%,
-    rgba(3, 121, 62, 0.52) 100%),
+    rgba(0, 243, 211, 0.274)0%,
+    rgba(3, 117, 121, 0.561) 100%),
     url(images/hero.jpg);
     min-height: 100vh;
-
+    display: flex;
+    flex-direction: column;
 }
 
 section{
     min-height: 75vh;
+}
+
+.navbar{
+    display: flex;
+    padding: 3rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buttons{
+    font-size: 3rem;
+    display: none
+}
+
+a{
+    text-decoration: none;
+}
+
+.nav-ul{
+    display: flex;
+
+}
+
+.brand-title{
+    font-size: 3.5rem;
+}
+
+
+.nav-link{
+    margin: 0 4rem;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 0.6rem;
+    font-weight: bold;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.home-container{
+    align-items: center;
+    min-height: 90vh;
+    justify-content: center;
+    max-width: 50rem;
+    margin: 0 auto;
+    line-height: 2.5rem;
 }
