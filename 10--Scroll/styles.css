@@ -221,11 +221,14 @@ a{
     background: #238a73;
     box-shadow:  35px 35px 0px #0e372e, 
                  -35px -35px 0px #fff;
-
     margin: 5rem;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: all .5s ease;
+}
+.service-container:hover{
+    transform: scale(1.05);
 }
 
 .container-title{
@@ -237,4 +240,13 @@ a{
 
 .btn-service{
     max-width: 15rem;
+}
+
+
+/* footer */
+
+.footer{
+    color:#298860;
+    font-size: 1.3rem;
+
 }
