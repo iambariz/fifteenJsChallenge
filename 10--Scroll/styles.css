@@ -73,9 +73,15 @@ section h1{
 
 .navbar{
     display: flex;
-    padding: 3rem;
+    position: fixed;
+    top: 0;
+    padding: 1rem 30rem;
     justify-content: space-around;
     align-items: center;
+    max-width: 100%;
+    z-index: 1024;
+    margin: 0 auto;    
+    
 }
 
 .buttons{
@@ -95,7 +101,6 @@ a{
 
 .nav-ul{
     display: flex;
-
 }
 
 .brand-title{
@@ -299,4 +304,11 @@ a{
 .footer{
     color:#298860;
     font-size: 1.3rem;
+}
+
+
+@media  screen and (max-width: 830px) {
+    .nav ul{
+        
+    }
 }
