@@ -74,13 +74,13 @@ section h1{
     display: flex;
     position: fixed;
     top: 0;
-    padding: 1rem 30rem;
+    padding: 0.5rem 30rem;
     justify-content: space-around;
     align-items: center;
     width: 100%;
     z-index: 1024;
-    margin: 0 auto;    
-    
+    margin: 0 auto;
+    transition: all 0.5s ease;
 }
 
 .buttons{
@@ -121,7 +121,6 @@ a{
 .nav-link{
     margin: 0 3rem;
     display: block;
-
     text-transform: uppercase;
     color: #fff;
     letter-spacing: 0.6rem;
@@ -160,6 +159,10 @@ a{
     transition: all 0.8s ease;
     margin: 0 auto;
     text-align: center;
+}
+
+.navbar.scrolled{
+    background-color: rgba(0, 153, 128, 0.459);
 }
 
 /* Hero */
@@ -308,6 +311,7 @@ a{
     background-color:#0b755eda;
     margin: 1rem auto;
     max-width: 11.5rem;
+    font-size: 1.4rem;
     padding: 1rem 1.5rem;
     text-align: center;
     color:#fff;
@@ -373,5 +377,13 @@ a{
 
     .inner-container{
         padding: 0;
+    }
+
+    .tour-box{
+        max-width: 30rem;
+    }
+    
+    .description-alt{
+        max-width: 30rem;
     }
 }
