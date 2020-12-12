@@ -218,6 +218,17 @@ a{
     min-width: 35rem;
 }
 
+.hr-green{
+    border: 1px solid #176252d7;
+    margin: 0 auto 2rem auto;
+    max-width: 20rem;
+}
+
+.description-alt{
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
 /* Services */
 
 .services-main{
