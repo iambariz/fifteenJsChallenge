@@ -20,7 +20,7 @@ html{
     font-size: 62.5%;
     font-family: 'Rubik', sans-serif;
     scroll-behavior: smooth;
-
+    overflow-x: hidden;
 }
 
 body{
@@ -215,13 +215,14 @@ a{
 }
 
 .description{
-    min-width: 35rem;
+    min-width: 25rem;
 }
 
 .hr-green{
     border: 1px solid #176252d7;
-    margin: 0 auto 2rem auto;
-    max-width: 20rem;
+    margin: 0 4rem 2rem ;
+    min-width: 20rem;
+    max-width: 40rem;
 }
 
 .description-alt{
@@ -344,6 +345,7 @@ a{
 
     .navbar{
         padding: 1rem 15rem;
+        overflow: hidden;
     }
 
 
