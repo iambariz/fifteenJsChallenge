@@ -10,25 +10,19 @@ const closeBtn = document.querySelector(".fas.fa-times");
 const openBtn = document.querySelector(".fas.fa-bars");
 const navbar = document.querySelector(".nav-ul");
 
-//Navbar toggle
+//Functions
 toggleOpen = () => {
-    console.log("asd")
     navbar.classList.toggle("open");
     closeBtn.classList.toggle("open");
-    console.log(closeBtn.classList);
 }
-
-
 
 //Even listeners
 
 openBtn.addEventListener('click', toggleOpen);
 openBtn.addEventListener('click', toggleOpen);
 
-
 window.addEventListener("scroll", ()=>{
     let windowVar = window.pageYOffset;
-        console.log("works");
     if(home.offsetTop + 100 <= windowVar){
         navContainer.classList.add("scrolled");
     }
@@ -37,7 +31,6 @@ window.addEventListener("scroll", ()=>{
     }
 });
 
-    console.log(tours);
 
 
 

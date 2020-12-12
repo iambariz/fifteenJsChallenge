@@ -144,7 +144,7 @@ a{
 
 }
 .nav-link:hover::before,
-.nav-link.active:hover::before{
+.nav-link.active::before{
     width: 100%;
 }
 
@@ -162,7 +162,7 @@ a{
 }
 
 .navbar.scrolled{
-    background-color: rgba(0, 153, 128, 0.459);
+    background-color: rgba(0, 153, 128, 0.505);
 }
 
 /* Hero */
