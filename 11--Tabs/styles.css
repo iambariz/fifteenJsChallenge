@@ -18,16 +18,73 @@ body{
     font-size: 1.6rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     height: 100vh;
     align-items: center;
     margin: 0 auto;
     max-width: 75rem;
+    color: #fff;
+    background: #03001e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ec38bc, #7303c0,);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ec38bc, #7303c0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+h1{
+    justify-self: flex-start;
+    text-transform: uppercase;
+    font-size: 5.5rem;
+    letter-spacing: 0.3rem;
+    padding-top: 4rem;
+}
+
+h4{
+    padding: 2rem;
 }
 
 .image{
-    max-width: 100%;
-      height: 50rem;
-      object-fit: cover;
+        width: 100%;
+      height: 35rem;
+      background-position: center;
+      object-fit: fill  ;
+}
 
+.tab-btn{
+    padding: 1.5rem 3rem;
+    text-transform: lowercase;
+    margin: 0 2rem;
+    width: 12.5rem;
+    background-color: #ec38bcce;
+    border: 2px solid #fff;
+    color: #ffffff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.tabs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    position: absolute;
+    padding: 4rem;
+    border-bottom: 2px solid #ffffff;
+    align-items: center;
+}
+
+.tab-item{
+    position: relative;
+    bottom: -15rem;
+    left: 0;
+    display: none;
+    padding: 15rem;
+}
+
+.tab-item.open{
+    display: block;
 }
