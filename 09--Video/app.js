@@ -5,11 +5,11 @@ const video = document.querySelector('.video-container');
 //toggle function 
 
 
-btn.addEventListener("click", function(){
-    if(!btn.classList.contains("slide")){
+btn.addEventListener("click", function () {
+    if (!btn.classList.contains("slide")) {
         btn.classList.add("slide");
         video.pause();
-    } else{
+    } else {
         btn.classList.remove("slide");
         video.play();
     }
@@ -18,6 +18,6 @@ btn.addEventListener("click", function(){
 // preloader
 const preloader = document.querySelector(".preloader");
 
-window.addEventListener('load', function(){
+window.addEventListener('load', function () {
     preloader.classList.add("hide-preloader");
 })
