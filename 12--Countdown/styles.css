@@ -48,10 +48,12 @@ body{
 }
 
 .deadline-format{
-    padding: 4rem;
+    padding: 3.5rem;
+    border-radius: 2rem;
     background-color: #ff2322;
     margin: 1rem;
     text-align: center;
+    min-width: 15rem;
     max-width: 15rem;
     flex-wrap: wrap;
 }
