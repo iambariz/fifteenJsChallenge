@@ -19,12 +19,21 @@ button.addEventListener("click", function (e) {
     e.preventDefault();
     outputArea.innerHTML = " "
     const value = parseInt(amount.value);
-    for (let i = 0; i < value; i++) {
-        outputArea.innerHTML +=
-            `
-        <div class="generated">
-        ${text[Math.floor(Math.random() * 5)]}
-        </div>
-        `;
+    if (value > 0 && value < 9) {
+        for (let i = 0; i < value; i++) {
+            outputArea.innerHTML +=
+                `
+            <div class="generated">
+            ${text[Math.floor(Math.random() * 5)]}
+            </div>
+            `;
+        }
     }
+    if (value == 0) {
+        outputArea.innerHTML = `<div class="generated"> <h1 class="alert"> Please add a value </h1> </div>`
+    } else {
+        outputArea.innerHTML = `<div class="generated"> <h1 class="alert"> Please add a value between 1 and 8 </h1> </div>`
+
+    }
+
 })

@@ -77,3 +77,7 @@ input[type=number] {
 .generated{
     padding: 1rem 2rem;
 }
+
+.alert{
+    color: #ff2322;
+}
