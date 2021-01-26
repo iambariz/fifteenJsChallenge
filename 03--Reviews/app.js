@@ -1,5 +1,4 @@
-const reviews = [
-    {
+const reviews = [{
         id: 1,
         name: "Michael Scott",
         img: "images/michael.jpg",
@@ -43,40 +42,39 @@ const resetBtn = document.querySelector("#reset-btn");
 
 let currentItem = 0;
 
-window.addEventListener('DOMContentLoaded', function(){
+window.addEventListener('DOMContentLoaded', function () {
     showPerson(currentItem);
 })
 
-function showPerson(person){
-    const item = reviews[person];  
+function showPerson(person) {
+    const item = reviews[person];
     img.src = item.img;
     author.textContent = item.name;
     job.textContent = item.job;
     info.textContent = item.text;
 }
 
-nextBtn.addEventListener('click', function(){
+nextBtn.addEventListener('click', function () {
     console.log("asd");
-    if(currentItem === reviews.length -1 ){
+    if (currentItem === reviews.length - 1) {
         currentItem = 0;
-    }else{
-    currentItem++;
+    } else {
+        currentItem++;
     }
 
     showPerson(currentItem);
 })
 
-prevBtn.addEventListener('click', function(){
-    if(currentItem === 0){
+prevBtn.addEventListener('click', function () {
+    if (currentItem === 0) {
         currentItem = reviews.length - 1;
-    }else{
+    } else {
         currentItem--;
     }
     showPerson(currentItem);
 })
 
-resetBtn.addEventListener('click', function(){
-    currentItem = Math.floor(Math.random()*(reviews.length));
+resetBtn.addEventListener('click', function () {
+    currentItem = Math.floor(Math.random() * (reviews.length));
     showPerson(currentItem);
 })
-
