@@ -38,10 +38,12 @@ body{
 .notification-bar{
   height: 4rem;
   margin: 2rem;
+  margin-bottom: 0rem;
 }
 
 .notification-msg{
-  transition: 0.8s all ease;
+  text-transform: uppercase;
+  transition: 0.6s all ease;
 }
 
 h1{

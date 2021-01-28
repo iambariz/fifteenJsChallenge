@@ -8,11 +8,6 @@ const clearBtn = document.querySelector('.clear-btn');
 
 let edit = false;
 let items = [];
-let messages = [
-    "Item added",
-    "Item removed",
-    "Please enter a name"
-]
 
 //Event listeners
 button.addEventListener('click', function (e) {
@@ -44,12 +39,25 @@ function makeItem() {
         //Push into an array
         items.push(item);
         console.log(items);
+        //Display msg
+        displayAlert("Item added", "green");
     } else {
-        alert("Works");
+        displayAlert("Please enter a name", "red");
     }
 }
 
-function displayAlert(msg) {
+function displayAlert(msg, color) {
+    notiBar.style.opacity = "1.0";
     notiBar.textContent = msg;
-
+    if (color == "red") {
+        notiBar.classList.add("red");
+    } else {
+        notiBar.classList.add("green");
+    }
+    setTimeout(function () {
+        notiBar.style.opacity = "0.0";
+    }, 2000);
+    setTimeout(function () {
+        notiBar.textContent = "";
+    }, 2800)
 }
