@@ -7,7 +7,8 @@ const itemsContainer = document.querySelector('.items');
 const clearBtn = document.querySelector('.clear-btn');
 
 let edit = false;
-
+let currentTarget;
+let textZone;
 
 //Event listeners
 button.addEventListener('click', function (e) {
@@ -20,40 +21,57 @@ clearBtn.addEventListener('click', clearItems);
 //Functions
 
 function makeItem() {
-    if (textField.value.length > 0 && textField.value.length < 16) {
-        //Create & add classes
-        let item = document.createElement("div");
-        //Set data ID
-        const attr = document.createAttribute("data-id");
-        const id = new Date().getTime().toString();
-        attr.value = id;
-        item.setAttributeNode(attr);
-        //Continue creating
-        item.classList.add('item');
-        let paragraph = document.createElement("p");
-        paragraph.textContent = textField.value;
-        let buttonDiv = document.createElement("div");
-        buttonDiv.classList.add('buttons');
-        let editBtn = document.createElement("i");
-        editBtn.classList.add('fas', 'fa-user-edit');
-        let delBtn = document.createElement("i");
-        delBtn.classList.add('fas', 'fa-trash-alt');
-        //Append
-        buttonDiv.appendChild(editBtn);
-        buttonDiv.appendChild(delBtn);
-        item.appendChild(paragraph);
-        item.appendChild(buttonDiv);
-        itemsContainer.appendChild(item);
-        //Event listeners
-        delBtn.addEventListener('click', deleteItem);
-        editBtn.addEventListener('click', editItem);
-        //Display msg
-        textField.value = "";
-        displayAlert("Item added", "green");
-        displayButton();
+    //Edit data
+    if (edit == true) {
+        if (textField.value.length > 0 && textField.value.length < 16) {
+            //console.log(textZone);
+            //console.log(textField.value);
+            currentTarget.childNodes[0].textContent = textField.value;
+            //console.log(textZone);
+            edit = false;
+            displayAlert("Edit succes", "green");
+            textField.value = "";
+        } else {
+            displayAlert("Please enter a value between 1 - 15", "red");
+            textField.value = "";
+        }
+        //Add new data
     } else {
-        displayAlert("Please enter a value between 1 - 15", "red");
-        textField.value = "";
+        if (textField.value.length > 0 && textField.value.length < 16) {
+            //Create & add classes
+            let item = document.createElement("div");
+            //Set data ID
+            const attr = document.createAttribute("data-id");
+            const id = new Date().getTime().toString();
+            attr.value = id;
+            item.setAttributeNode(attr);
+            //Continue creating
+            item.classList.add('item');
+            let paragraph = document.createElement("p");
+            paragraph.textContent = textField.value;
+            let buttonDiv = document.createElement("div");
+            buttonDiv.classList.add('buttons');
+            let editBtn = document.createElement("i");
+            editBtn.classList.add('fas', 'fa-user-edit');
+            let delBtn = document.createElement("i");
+            delBtn.classList.add('fas', 'fa-trash-alt');
+            //Append
+            buttonDiv.appendChild(editBtn);
+            buttonDiv.appendChild(delBtn);
+            item.appendChild(paragraph);
+            item.appendChild(buttonDiv);
+            itemsContainer.appendChild(item);
+            //Event listeners
+            delBtn.addEventListener('click', deleteItem);
+            editBtn.addEventListener('click', editItem);
+            //Display msg
+            textField.value = "";
+            displayAlert("Item added", "green");
+            displayButton();
+        } else {
+            displayAlert("Please enter a value between 1 - 15", "red");
+            textField.value = "";
+        }
     }
 }
 
@@ -103,6 +121,11 @@ function deleteItem(e) {
     displayButton();
 }
 
-function editItem() {
-
+function editItem(e) {
+    edit = true;
+    currentTarget = e.currentTarget.parentElement.parentElement;
+    textZone = currentTarget.childNodes[0].textContent;
+    //console.log(currentTarget);
+    //console.log(textZone);
+    textField.value = textZone;
 }
