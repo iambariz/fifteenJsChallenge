@@ -7,7 +7,7 @@ const itemsContainer = document.querySelector('.items');
 const clearBtn = document.querySelector('.clear-btn');
 
 let edit = false;
-let items = [];
+
 
 //Event listeners
 button.addEventListener('click', function (e) {
@@ -20,7 +20,7 @@ clearBtn.addEventListener('click', clearItems);
 //Functions
 
 function makeItem() {
-    if (textField.value.length > 0) {
+    if (textField.value.length > 0 && textField.value.length < 16) {
         //Create & add classes
         let item = document.createElement("div");
         //Set data ID
@@ -44,15 +44,15 @@ function makeItem() {
         item.appendChild(paragraph);
         item.appendChild(buttonDiv);
         itemsContainer.appendChild(item);
-        //Push into an array
-        items.push(item);
-        console.log(items);
+        //Event listeners
+        delBtn.addEventListener('click', deleteItem);
+        editBtn.addEventListener('click', editItem);
         //Display msg
         textField.value = "";
         displayAlert("Item added", "green");
         displayButton();
     } else {
-        displayAlert("Please enter a name", "red");
+        displayAlert("Please enter a value between 1 - 15", "red");
         textField.value = "";
     }
 }
@@ -67,14 +67,17 @@ function displayAlert(msg, color) {
     }
     setTimeout(function () {
         notiBar.style.opacity = "0.0";
-    }, 2000);
+    }, 1200);
     setTimeout(function () {
+        notiBar.className = "notification-msg";
         notiBar.textContent = "";
-    }, 2800)
+    }, 2000)
 }
 
 function displayButton() {
-    if (items.length > 0) {
+    const items = document.querySelectorAll(".item");
+    //    console.log(items);
+    if (items.length >= 1) {
         clearBtn.style.display = "inline";
     } else {
         clearBtn.style.display = "none";
@@ -82,18 +85,24 @@ function displayButton() {
 }
 
 function clearItems() {
+    const delItem = document.querySelectorAll(".item");
 
-    let delItem = document.querySelectorAll(".item");
-
-    if (items.length > 0) {
+    if (delItem.length > 0) {
         delItem.forEach(function (item) {
             itemsContainer.removeChild(item);
         })
     }
+    displayAlert("List cleared", "red");
     displayButton();
 }
 
 
-function deleteItem(dataId) {
-    document.querySelectorAll()
+function deleteItem(e) {
+    const element = e.currentTarget.parentElement.parentElement;
+    itemsContainer.removeChild(element);
+    displayButton();
+}
+
+function editItem() {
+
 }
