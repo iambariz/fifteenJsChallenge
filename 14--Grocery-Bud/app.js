@@ -15,12 +15,20 @@ button.addEventListener('click', function (e) {
 });
 button.addEventListener('click', makeItem);
 
+clearBtn.addEventListener('click', clearItems);
+
 //Functions
 
 function makeItem() {
     if (textField.value.length > 0) {
         //Create & add classes
         let item = document.createElement("div");
+        //Set data ID
+        const attr = document.createAttribute("data-id");
+        const id = new Date().getTime().toString();
+        attr.value = id;
+        item.setAttributeNode(attr);
+        //Continue creating
         item.classList.add('item');
         let paragraph = document.createElement("p");
         paragraph.textContent = textField.value;
@@ -40,9 +48,12 @@ function makeItem() {
         items.push(item);
         console.log(items);
         //Display msg
+        textField.value = "";
         displayAlert("Item added", "green");
+        displayButton();
     } else {
         displayAlert("Please enter a name", "red");
+        textField.value = "";
     }
 }
 
@@ -60,4 +71,29 @@ function displayAlert(msg, color) {
     setTimeout(function () {
         notiBar.textContent = "";
     }, 2800)
+}
+
+function displayButton() {
+    if (items.length > 0) {
+        clearBtn.style.display = "inline";
+    } else {
+        clearBtn.style.display = "none";
+    }
+}
+
+function clearItems() {
+
+    let delItem = document.querySelectorAll(".item");
+
+    if (items.length > 0) {
+        delItem.forEach(function (item) {
+            itemsContainer.removeChild(item);
+        })
+    }
+    displayButton();
+}
+
+
+function deleteItem(dataId) {
+    document.querySelectorAll()
 }

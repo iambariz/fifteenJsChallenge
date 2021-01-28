@@ -150,6 +150,7 @@ input:focus {
 .clear-btn{
   border-radius: 2rem;
   text-decoration: none;
+  display: none;
   padding: 0.8rem 1.3rem;
 }
 
