@@ -64,6 +64,8 @@ function makeItem() {
             //Event listeners
             delBtn.addEventListener('click', deleteItem);
             editBtn.addEventListener('click', editItem);
+            //Save in storage
+            addToLocalStorage(id, textField.value);
             //Display msg
             textField.value = "";
             displayAlert("Item added", "green");
@@ -118,6 +120,7 @@ function clearItems() {
 function deleteItem(e) {
     const element = e.currentTarget.parentElement.parentElement;
     itemsContainer.removeChild(element);
+    displayAlert("Item deleted", "red");
     displayButton();
 }
 
@@ -128,4 +131,27 @@ function editItem(e) {
     //console.log(currentTarget);
     //console.log(textZone);
     textField.value = textZone;
+}
+
+function addToLocalStorage(id, value) {
+    const grocery = {
+        id,
+        value,
+    }
+    //Check if the items array excist in storage
+    //If not creates one
+    let items = localStorage.getItem("list") ?
+        JSON.parse(localStorage.getItem('list')) : [];
+    //console.log(grocery);
+    items.push(grocery);
+    //console.log(items);
+    localStorage.setItem("list", JSON.stringify(items));
+}
+
+function removeFromLocalStorage(id) {
+
+}
+
+function editLocalStorage(id, value) {
+
 }
