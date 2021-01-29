@@ -19,6 +19,8 @@ button.addEventListener('click', makeItem);
 
 clearBtn.addEventListener('click', clearItems);
 
+window.addEventListener('DOMContentLoaded', displayItems);
+
 //Functions
 
 function makeItem() {
@@ -178,4 +180,45 @@ function editLocalStorage(id, value) {
 function getLocalStorage() {
     return localStorage.getItem("list") ?
         JSON.parse(localStorage.getItem('list')) : [];
+}
+
+function displayItems() {
+    let items = getLocalStorage();
+    //console.log(items[0].id, items[0].value)
+    if (items.length > 0) {
+        items.forEach(function (item) {
+            createElement(item.id, item.value);
+        })
+        displayAlert("Loading successful", "green");
+    }
+}
+
+function createElement(id, value) {
+    //Create & add classes
+    let item = document.createElement("div");
+    //Add ID
+    const attr = document.createAttribute("data-id");
+    attr.value = id;
+    item.setAttributeNode(attr);
+    //Continue creating
+    item.classList.add('item');
+    let paragraph = document.createElement("p");
+    paragraph.textContent = value;
+    let buttonDiv = document.createElement("div");
+    buttonDiv.classList.add('buttons');
+    let editBtn = document.createElement("i");
+    editBtn.classList.add('fas', 'fa-user-edit');
+    let delBtn = document.createElement("i");
+    delBtn.classList.add('fas', 'fa-trash-alt');
+    //Append
+    buttonDiv.appendChild(editBtn);
+    buttonDiv.appendChild(delBtn);
+    item.appendChild(paragraph);
+    item.appendChild(buttonDiv);
+    itemsContainer.appendChild(item);
+    //Event listeners
+    delBtn.addEventListener('click', deleteItem);
+    editBtn.addEventListener('click', editItem);
+    displayAlert("Item added", "green");
+    displayButton();
 }
