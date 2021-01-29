@@ -9,6 +9,7 @@ const clearBtn = document.querySelector('.clear-btn');
 let edit = false;
 let currentTarget;
 let textZone;
+let currentId;
 
 //Event listeners
 button.addEventListener('click', function (e) {
@@ -20,7 +21,7 @@ clearBtn.addEventListener('click', clearItems);
 
 //Functions
 
-function makeItem(e) {
+function makeItem() {
     //Edit data
     if (edit == true) {
         if (textField.value.length > 0 && textField.value.length < 16) {
@@ -28,16 +29,14 @@ function makeItem(e) {
             //console.log(textField.value);
             currentTarget.childNodes[0].textContent = textField.value;
             //console.log(textZone);
-            editId = e.currentTarget.parentElement.parentElement.dataset.id;
             edit = false;
-            editLocalStorage(editId, textField.value);
+            editLocalStorage(currentId, textField.value);
             displayAlert("Edit succes", "green");
             textField.value = "";
         } else {
             displayAlert("Please enter a value between 1 - 15", "red");
             textField.value = "";
         }
-
     } else {
         if (textField.value.length > 0 && textField.value.length < 16) {
             //Create & add classes
@@ -78,24 +77,7 @@ function makeItem(e) {
         }
     }
 }
-/*
-function editItem(e) {
-    if (textField.value.length > 0 && textField.value.length < 16) {
-        console.log(textZone);
-        console.log(textField.value);
-        currentTarget.childNodes[0].textContent = textField.value;
-        console.log(textZone);
-        editId = e.currentTarget.parentElement.parentElement.dataset.id;
-        edit = false;
-        editLocalStorage(editId, textField.value);
-        displayAlert("Edit succes", "green");
-        textField.value = "";
-    } else {
-        displayAlert("Please enter a value between 1 - 15", "red");
-        textField.value = "";
-    }
-}
-*/
+
 function displayAlert(msg, color) {
     notiBar.style.opacity = "1.0";
     notiBar.textContent = msg;
@@ -149,10 +131,13 @@ function deleteItem(e) {
 function editItem(e) {
     edit = true;
     currentTarget = e.currentTarget.parentElement.parentElement;
+    currentId = currentTarget.dataset.id;
+    console.log(currentId);
     textZone = currentTarget.childNodes[0].textContent;
     //console.log(currentTarget);
     //console.log(textZone);
     textField.value = textZone;
+    displayAlert("Edit mode", "green");
 }
 
 function addToLocalStorage(id, value) {
