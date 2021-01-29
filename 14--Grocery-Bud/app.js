@@ -20,7 +20,7 @@ clearBtn.addEventListener('click', clearItems);
 
 //Functions
 
-function makeItem() {
+function makeItem(e) {
     //Edit data
     if (edit == true) {
         if (textField.value.length > 0 && textField.value.length < 16) {
@@ -28,14 +28,16 @@ function makeItem() {
             //console.log(textField.value);
             currentTarget.childNodes[0].textContent = textField.value;
             //console.log(textZone);
+            editId = e.currentTarget.parentElement.parentElement.dataset.id;
             edit = false;
+            editLocalStorage(editId, textField.value);
             displayAlert("Edit succes", "green");
             textField.value = "";
         } else {
             displayAlert("Please enter a value between 1 - 15", "red");
             textField.value = "";
         }
-        //Add new data
+
     } else {
         if (textField.value.length > 0 && textField.value.length < 16) {
             //Create & add classes
@@ -76,7 +78,24 @@ function makeItem() {
         }
     }
 }
-
+/*
+function editItem(e) {
+    if (textField.value.length > 0 && textField.value.length < 16) {
+        console.log(textZone);
+        console.log(textField.value);
+        currentTarget.childNodes[0].textContent = textField.value;
+        console.log(textZone);
+        editId = e.currentTarget.parentElement.parentElement.dataset.id;
+        edit = false;
+        editLocalStorage(editId, textField.value);
+        displayAlert("Edit succes", "green");
+        textField.value = "";
+    } else {
+        displayAlert("Please enter a value between 1 - 15", "red");
+        textField.value = "";
+    }
+}
+*/
 function displayAlert(msg, color) {
     notiBar.style.opacity = "1.0";
     notiBar.textContent = msg;
@@ -114,11 +133,14 @@ function clearItems() {
     }
     displayAlert("List cleared", "red");
     displayButton();
+    localStorage.removeItem('list');
 }
 
 
 function deleteItem(e) {
     const element = e.currentTarget.parentElement.parentElement;
+    const id = element.dataset.id;
+    removeFromLocalStorage(id);
     itemsContainer.removeChild(element);
     displayAlert("Item deleted", "red");
     displayButton();
@@ -140,8 +162,7 @@ function addToLocalStorage(id, value) {
     }
     //Check if the items array excist in storage
     //If not creates one
-    let items = localStorage.getItem("list") ?
-        JSON.parse(localStorage.getItem('list')) : [];
+    let items = getLocalStorage();
     //console.log(grocery);
     items.push(grocery);
     //console.log(items);
@@ -149,9 +170,27 @@ function addToLocalStorage(id, value) {
 }
 
 function removeFromLocalStorage(id) {
-
+    let items = getLocalStorage();
+    items = items.filter(function (item) {
+        if (item.id !== id) {
+            return item;
+        }
+    })
+    localStorage.setItem("list", JSON.stringify(items));
 }
 
 function editLocalStorage(id, value) {
+    let items = getLocalStorage();
+    items = items.map(function (item) {
+        if (item.id == id) {
+            item.value = value;
+        }
+        return item;
+    })
+    localStorage.setItem("list", JSON.stringify(items));
+}
 
+function getLocalStorage() {
+    return localStorage.getItem("list") ?
+        JSON.parse(localStorage.getItem('list')) : [];
 }
