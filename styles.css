@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 :root{
-  --main-bg: #2BAE66FF;
+  --main-bg: #220066;
   --secondary-bg: #fff;
 }
 
@@ -34,22 +34,23 @@ h1{
 
 .container{
   margin: 0 auto;
-  max-width: 70vw;
+  max-width: 90vw;
   text-align: center  ;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(30rem, 40rem));
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 40rem));
     gap: 5em 2em;
     margin: 0 auto;
-    align-items:center;
+    justify-content: center;
+    padding: 4rem;
   }
 
 .grid-item{
-  border: 3px solid  #220066;
+  border: 4px solid  var(--main-bg);
   background-color: var(--secondary-bg);;
-  box-shadow: 35px -16px #fff;
+  box-shadow: 25px -25px var(--secondary-bg);
 }
 
 .grid-item p{
@@ -70,5 +71,5 @@ a{
   object-fit: cover;
   max-width: 100%;
   max-height: 100%;
-  border-bottom: 3px solid  #220066;
+  border-bottom: 4px solid  var(--main-bg);;
 }
