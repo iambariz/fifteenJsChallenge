@@ -1,85 +1,84 @@
-const items = [
-    {
-        id: 1,
-        title: "Avocado on toast",
-        category: "breakfast",
-        price: 15.99,
-        img: "./images/item-1.jpg",
-        desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
-      },
-      {
-        id: 2,
-        title: "Pork steak",
-        category: "lunch",
-        price: 13.99,
-        img: "./images/item-2.jpg",
-        desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
-      },
-      {
-        id: 3,
-        title: "Pancakes",
-        category: "dessert",
-        price: 6.99,
-        img: "./images/item-3.jpg",
-        desc: `ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
-      },
-      {
-        id: 4,
-        title: "Fried eggs",
-        category: "breakfast",
-        price: 8.99,
-        img: "./images/item-4.jpg",
-        desc: `Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, `,
-      },
-      {
-        id: 5,
-        title: "Pizza",
-        category: "lunch",
-        price: 17.99,
-        img: "./images/item-5.jpg",
-        desc: `franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up `,
-      },
-      {
-        id: 6,
-        title: "Ice cream",
-        category: "dessert",
-        price: 18.99,
-        img: "./images/item-6.jpg",
-        desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
-      },
-      {
-        id: 7,
-        title: "English breakfast",
-        category: "breakfast",
-        price: 14.99,
-        img: "./images/item-7.jpg",
-        desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
-      },
-      {
-        id: 8,
-        title: "Classic Roast lunch",
-        category: "lunch",
-        price: 12.99,
-        img: "./images/item-8.jpg",
-        desc: `on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  `,
-      },
-      {
-        id: 9,
-        title: "Cake of the day",
-        category: "dessert",
-        price: 4.99,
-        img: "./images/item-9.jpg",
-        desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
-      },
-      {
-        id: 10,
-        title: "Beef steak",
-        category: "lunch",
-        price: 22.99,
-        img: "./images/item-10.jpg",
-        desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
-      },
-    ];
+const items = [{
+    id: 1,
+    title: "Avocado on toast",
+    category: "breakfast",
+    price: 15.99,
+    img: "./images/item-1.jpg",
+    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
+  },
+  {
+    id: 2,
+    title: "Pork steak",
+    category: "lunch",
+    price: 13.99,
+    img: "./images/item-2.jpg",
+    desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
+  },
+  {
+    id: 3,
+    title: "Pancakes",
+    category: "dessert",
+    price: 6.99,
+    img: "./images/item-3.jpg",
+    desc: `ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
+  },
+  {
+    id: 4,
+    title: "Fried eggs",
+    category: "breakfast",
+    price: 8.99,
+    img: "./images/item-4.jpg",
+    desc: `Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, `,
+  },
+  {
+    id: 5,
+    title: "Pizza",
+    category: "lunch",
+    price: 17.99,
+    img: "./images/item-5.jpg",
+    desc: `franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up `,
+  },
+  {
+    id: 6,
+    title: "Ice cream",
+    category: "dessert",
+    price: 18.99,
+    img: "./images/item-6.jpg",
+    desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
+  },
+  {
+    id: 7,
+    title: "English breakfast",
+    category: "breakfast",
+    price: 14.99,
+    img: "./images/item-7.jpg",
+    desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
+  },
+  {
+    id: 8,
+    title: "Classic Roast lunch",
+    category: "lunch",
+    price: 12.99,
+    img: "./images/item-8.jpg",
+    desc: `on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  `,
+  },
+  {
+    id: 9,
+    title: "Cake of the day",
+    category: "dessert",
+    price: 4.99,
+    img: "./images/item-9.jpg",
+    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+  },
+  {
+    id: 10,
+    title: "Beef steak",
+    category: "lunch",
+    price: 22.99,
+    img: "./images/item-10.jpg",
+    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+  },
+];
 
 
 //Declare variables
@@ -91,23 +90,22 @@ const buttons = document.querySelectorAll(".filter-btn");
 
 
 //On load display
-window.addEventListener("DOMContentLoaded", function(){
+window.addEventListener("DOMContentLoaded", function () {
   displayItems(items);
 });
 
 //Filter items
-buttons.forEach(function(btn){
-  btn.addEventListener('click', function(e){
+buttons.forEach(function (btn) {
+  btn.addEventListener('click', function (e) {
     const category = e.currentTarget.dataset.id;
-    const menuCategory = items.filter(function(menuItem){
-      if(menuItem.category === category){
+    const menuCategory = items.filter(function (menuItem) {
+      if (menuItem.category === category) {
         return menuItem;
       }
     });
-    if(category === "all"){
+    if (category === "all") {
       displayItems(items);
-    }
-    else{
+    } else {
       displayItems(menuCategory)
     }
   });
@@ -115,8 +113,8 @@ buttons.forEach(function(btn){
 
 
 //Function declare
-function displayItems(array){
-  let displayMenu = array.map(function(item){
+function displayItems(array) {
+  let displayMenu = array.map(function (item) {
     return `
     <div class="menu-item">
     <img src="${item.img}" alt="#" class="image">

@@ -1,6 +1,6 @@
 //Selectors
 
-const items = document.querySelectorAll('.slide-item');
+const items = document.querySelectorAll('.reference-group');
 const nextButton = document.querySelector('.next');
 const prevButton = document.querySelector('.previous');
 //console.log(items);
